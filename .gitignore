@@ -9,6 +9,9 @@
 *log.html
 *report.html
 
+# mobile device images
+*.apk
+
 # Packages
 *.egg
 *.egg-info
