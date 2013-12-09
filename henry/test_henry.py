@@ -1,4 +1,8 @@
 import os
+import json
+
+
+
 
 import selenium.webdriver as webdriver
 from nose.tools import *
@@ -26,6 +30,25 @@ class TestHenry(object):
     def teardown(self):
         self.driver.quit()
 
-    def test_window(self):
-        print self.driver.get_window_size()
-        assert False
+    def test_list_click(self):
+        elem = find_element_by_tag(self.driver, 'TextView', "Lenovo X301")
+        tap(self.driver, elem)
+        elem = find_element_by_tag(self.driver, 'TextView', "Pad for the kids to scribble on.")
+
+
+class TagNotFoundError(Exception):
+    pass
+
+
+def find_element_by_tag(driver, tag, text):
+    unicode_text = unicode(text)
+    for elem in driver.find_elements_by_tag_name(tag):
+        if elem.text == text:
+            return elem
+    else:
+        raise TagNotFoundError(text)
+
+def tap(driver, element, touch_count=1):
+    driver.execute_script("mobile: tap", {"touchCount":str(touch_count), 
+                                          "element":element.id}) 
+    
