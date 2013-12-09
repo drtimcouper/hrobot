@@ -1,0 +1,60 @@
+*.py[cod]
+.*.swp
+
+# C extensions
+*.so
+
+#robotframework
+*output.xml
+*log.html
+*report.html
+
+# Packages
+*.egg
+*.egg-info
+dist
+build
+eggs
+parts
+bin
+var
+sdist
+develop-eggs
+.installed.cfg
+lib64
+
+# Installer logs
+pip-log.txt
+
+# Project logs
+*idea
+*.log
+
+# Unit test / coverage reports
+.coverage
+.tox
+nosetests.xml
+coverage.xml
+pep8.txt
+md5.*\.last
+htmlcov
+
+# Translations
+*.mo
+
+# Mr Developer
+.mr.developer.cfg
+.project
+.pydevproject
+recomm/local.py
+.jenkins-private
+
+
+# build/deploy artifacts
+
+*.swo
+*.deb
+
+*.sql
+
+.DS_Store
